@@ -1,0 +1,75 @@
+ {
+    "positions": [
+      {
+        "title": "Full-Stack Developers",
+        "type": ["Full-time", "On site"],
+        "department": "Engineering",
+        "description": "Due to growing workload, we are looking for experienced and talented Full-Stack Developers to join our fast-paced Engineering team. You will work closely with Product, Design and Marketing to analyze, develop, debug, test, roll-out and support new and existing product features.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Frontend Engineer",
+        "type": ["Full-time", "Remote"],
+        "department": "Engineering",
+        "description": "We are seeking a skilled Frontend Engineer to create exceptional user interfaces. You will collaborate with UX/UI designers and backend developers to deliver seamless web experiences.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Backend Engineer",
+        "type": ["Full-time", "On site"],
+        "department": "Engineering",
+        "description": "Join our backend team to build scalable APIs and robust systems. Ideal candidates have experience in Node.js, PostgreSQL, and microservices architecture.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Product Manager",
+        "type": ["Full-time", "Remote"],
+        "department": "Product",
+        "description": "We are looking for a Product Manager to drive product planning and execution throughout the product lifecycle. You’ll define product vision and work closely with engineering and design teams.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Product Owner",
+        "type": ["Full-time", "On site"],
+        "department": "Product",
+        "description": "Collaborate with stakeholders and development teams to prioritize features and deliver customer-centric solutions. Strong Agile experience is preferred.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "UI/UX Designer",
+        "type": ["Full-time", "Remote"],
+        "department": "Design",
+        "description": "We are seeking a creative UI/UX Designer to craft engaging user experiences. You will transform complex problems into intuitive and beautiful designs.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Operations Manager",
+        "type": ["Full-time", "On site"],
+        "department": "Operation",
+        "description": "Lead our operations team to improve processes, manage logistics, and ensure efficiency across all departments. Prior experience in scaling teams is a plus.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Customer Support Lead",
+        "type": ["Full-time", "Remote"],
+        "department": "Operation",
+        "description": "Oversee the support team to ensure timely and effective responses to customer inquiries. You’ll implement support tools and track key performance metrics.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Digital Marketing Specialist",
+        "type": ["Full-time", "Remote"],
+        "department": "Marketing",
+        "description": "Create and manage digital campaigns across various platforms. You’ll analyze performance metrics and optimize content for lead generation and brand awareness.",
+        "viewDetailsLink": "View details"
+      },
+      {
+        "title": "Content Strategist",
+        "type": ["Full-time", "On site"],
+        "department": "Marketing",
+        "description": "Develop and execute a content strategy aligned with our brand voice and goals. You’ll work closely with designers and marketing leads.",
+        "viewDetailsLink": "View details"
+      }
+    ]
+  }
+  
