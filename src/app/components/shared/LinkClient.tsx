@@ -19,12 +19,14 @@ export default function LinkClient({
   children,
   target,
   rel,
+  onClick,
   ...rest
 }: LinkClientProps) {
   const pathname = usePathname();
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (pathname !== href) beforeNavigate();
+    if (onClick) onClick(e);
   };
 
   return (

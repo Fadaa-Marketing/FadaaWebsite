@@ -33,7 +33,7 @@ export default function ContactSidebar({
       >
         <div className="sidebar-content sidebar-mobile">
           <button className="sidebar-close-button" onClick={onClose}>
-            &times;
+            x
           </button>
           <div className="sidebar-links-container">
             {headerLinks?.map((link) => (
