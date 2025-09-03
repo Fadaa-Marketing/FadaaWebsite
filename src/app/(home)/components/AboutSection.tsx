@@ -13,8 +13,8 @@ const Fadaa = () => {
     offset: ["start center", "end center"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const y = useTransform(scrollYProgress, [0, 0.5], [500, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+  const y = useTransform(scrollYProgress, [0, 0.3], [300, 0]);
 
   return (
     <section
@@ -25,7 +25,7 @@ const Fadaa = () => {
         <div className="relative w-full   lg:max-w-[500px] mx-auto">
           <div className="relative flex justify-center items-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[640px] w-full max-w-[200px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[400px] mx-auto rounded-full overflow-hidden bg-gradient-to-br to-primary from-[#3a0064]">
             <motion.div
-              style={{ opacity: isInView ? opacity : 0, y: isInView ? y : 1700 }}
+              style={{ opacity: isInView ? opacity : 0, y: isInView ? y : 1000 }}
               className="absolute top-2 sm:top-3 md:top-4 lg:top-5"
             >
               <Image
