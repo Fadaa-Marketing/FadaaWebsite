@@ -20,7 +20,6 @@ const page = async ()  => {
   const socialData = socialLinks?.social_links ;
   return (
     <div className='bg-primary'>
-      <h1 className="hidden"> Jobs</h1>
       <HeroSection/>
       <Team  />
       <Opportunities jobsCategory={jobsCategory}/>

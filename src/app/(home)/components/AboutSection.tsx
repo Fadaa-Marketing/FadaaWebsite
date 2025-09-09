@@ -30,7 +30,7 @@ const Fadaa = () => {
             >
               <Image
                 src={`/astronaut.png`}
-                alt={"astronaut"}
+                alt={"Fadaa Marketing Agency"}
                 width={416}
                 height={638}
                 className="w-[200px] sm:w-[250px] md:w-[300px] lg:w-[350px] xl:w-[416px] h-auto transition-all duration-300"
@@ -40,7 +40,7 @@ const Fadaa = () => {
           
           <Image 
             src={`/stars.svg`} 
-            alt={"fadaa"} 
+            alt={"Fadaa Marketing Agency"} 
             width={100} 
             height={100} 
             className=" hidden lg:block  absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-[100px] xl:h-[100px]" 

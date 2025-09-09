@@ -14,7 +14,6 @@ const Portfolio = async () => {
   return (
     <>
       <div className="pg-primary first-porto">
-        <h1 className="hidden">Our Portfolio</h1>
         <div className="sec-porto mx-auto">
           <div className="pb-[50px]">
             <CustomHero

@@ -13,7 +13,7 @@ const page = async () => {
   return (
     <div>
       <div className="relative overflow-hidden">
-        <h1 className="hidden"> Services</h1>
+        
         <img
           src="/PlanetsBG.jpg"
           alt="Background"

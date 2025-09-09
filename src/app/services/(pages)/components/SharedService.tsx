@@ -47,9 +47,9 @@ const SharedService = async ({
       </div>
       <ActivePlanet services={services} />
       <div className="py-10 flex flex-col justify-center items-center ">
-        <h2 className="x-padding secondary-title text-center md:text-left capitalize my-10">
+        <p className="x-padding secondary-title text-center md:text-left capitalize my-10">
           Brands we have worked with
-        </h2>
+        </p>
         <ClientsLogo />
       </div>
       <GifSection gif={gif} />

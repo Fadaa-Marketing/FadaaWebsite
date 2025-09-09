@@ -64,9 +64,9 @@ export const GifSwiper = ({ gif }: { gif: Gif[] }) => {
               <span className="text-[10px] sm:text-xs rounded-full px-2 sm:px-3 py-1 bg-[#3E009EED] uppercase tracking-widest mb-2 block w-fit">
                 Step 0{key + 1}
               </span>
-              <h3 className="text-white text-lg sm:text-3xl font-medium mb-1 sm:mb-2">
+              <p className="text-white text-lg sm:text-3xl font-medium mb-1 sm:mb-2">
                 {item.title}
-              </h3>
+              </p>
               <p className="text-white text-xs sm:text-lg">
                 {item.description}
               </p>

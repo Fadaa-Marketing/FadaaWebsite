@@ -17,7 +17,6 @@ const page = async () => {
   const contactData = await getContactData();
   return (
     <div className="bg-primary">
-      <h1 className="hidden"> Contact Us</h1>
       <div className="sec-porto mx-auto">
         <CustomHero
           title={contactData?.contact_title || "Contact Us"}

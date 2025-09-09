@@ -40,7 +40,7 @@ const ActivePlanet = ({services}:{services: any} ) => {
               height={150}
               className={`h-[70px] w-[70px] lg:h-auto lg:w-full object-cover rounded transition-opacity  hover:opacity-100 duration-300 ${isActive ? 'opacity-100' : 'opacity-30'}  `}
             />
-            <h2 className='text-xs lg:text-base uppercase text-center'>{item.title}</h2>
+            <p className='text-xs lg:text-base uppercase text-center'>{item.title}</p>
           </Link>
         )
       })}
