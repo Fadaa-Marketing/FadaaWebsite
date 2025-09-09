@@ -9,6 +9,7 @@ import Portfolio from "./components/Portfolio";
 export default function Home() {
   return (
     <div className="overflow-hidden">
+      <h1 className="hidden">Fadaa Marketing Agency</h1>
       <HeroSection/>
       <Counter/>
       <AboutSection/>

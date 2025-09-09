@@ -17,12 +17,12 @@ const page = async () => {
   const contactData = await getContactData();
   return (
     <div className="bg-primary">
+      <h1 className="hidden"> Contact Us</h1>
       <div className="sec-porto mx-auto">
         <CustomHero
           title={contactData?.contact_title || "Contact Us"}
           description={
-            contactData?.contact_subtitle ||
-            "Have a question? Fadaa Marketing is here to support and grow your brand"
+           "Contact Fadaa Marketing — Let’s Start Your Digital Journey"
           }
         />
         <div className="leftOP">

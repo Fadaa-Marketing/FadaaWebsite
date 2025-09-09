@@ -3,7 +3,7 @@ import React from 'react'
 
 const BlogsHero = () => {
   return (
-    <CustomHero title='Blogs' description='Explore our latest thoughts, updates, and strategies ' />
+    <CustomHero title='Blogs' description='Blogs – Fadaa Marketing Insights & Trends 2025' />
   )
 }
 

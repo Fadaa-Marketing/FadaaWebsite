@@ -14,11 +14,12 @@ const Portfolio = async () => {
   return (
     <>
       <div className="pg-primary first-porto">
+        <h1 className="hidden">Our Portfolio</h1>
         <div className="sec-porto mx-auto">
           <div className="pb-[50px]">
             <CustomHero
-              title="PORTFOLIO"
-              description="Marketing that grows your brand and drives results."
+              title="Our Portfolio"
+              description="Our Portfolio – Pushing Digital Boundaries"
             />
           </div>
           <Category portoCategory={portoCategory} />

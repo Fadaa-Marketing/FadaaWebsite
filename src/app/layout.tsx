@@ -1,26 +1,18 @@
 import type { Metadata } from "next";
-// import { Inter } from "next/font/google";
 import "./globals.css";
 import { Footer, Header } from "./components";
 import Script from "next/script";
 import { Toaster } from "@/components/ui/sonner";
 import GlobalErrorHandler from "./components/GlobalErrorHandler";
-import CustomRouteProgress  from "./components/CustomRouteProgress";
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-inter",
-// });
+import CustomRouteProgress from "./components/CustomRouteProgress";
+import MetadataHandler from "./components/MetadataHandler";
 
 export const metadata: Metadata = {
   title: "Fadaa Marketing | Home",
   description:
     "We come from space to guide brands across the ever-expanding marketing universe",
-    manifest: "/manifest.json",
+  manifest: "/manifest.json",
   themeColor: "#000000",
-  // icons: {
-  //   icon: "/logo.svg",
-  //   apple: "/logo.svg",
-  // },
 };
 
 export default function RootLayout({
@@ -31,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <MetadataHandler />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="Dy_pDaBRSk5R6Le1tDWWKdanoIPszKOdsqBsBSpcYJQ" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -68,7 +61,7 @@ export default function RootLayout({
       </head>
       <body className={``}>
         <GlobalErrorHandler>
-          <CustomRouteProgress  />
+          <CustomRouteProgress />
           <Header />
           {children}
           <Footer />

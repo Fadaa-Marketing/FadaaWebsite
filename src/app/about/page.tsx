@@ -21,6 +21,7 @@ export default async function Page() {
   return (
     <>
       <div className="bg-primary">
+        <h1 className="hidden">About Us</h1>
         <div className="sec-porto">
           <AboutHero />
           <div className="bg-[url('/about/leftCenter.png')] bg-no-repeat bg-bottom-left">

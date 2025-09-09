@@ -13,6 +13,7 @@ const page = async () => {
   return (
     <div>
       <div className="relative overflow-hidden">
+        <h1 className="hidden"> Services</h1>
         <img
           src="/PlanetsBG.jpg"
           alt="Background"
@@ -21,7 +22,7 @@ const page = async () => {
         <div className="relative z-10">
           <CustomHero
             title="Services"
-            description="Explore Our Services Everything You Need to Grow Your Brand"
+            description="Services That Drive Your Brand Forward"
             clssremover=""
           />
           <ServicesSection classpt="y-padding" />
