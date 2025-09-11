@@ -4,7 +4,7 @@ import React from "react";
 import LeftSide from "../components/LeftSide";
 import Article from "../components/Article";
 import { notFound } from "next/navigation";
-import CustomHero from "@/app/components/shared/CustomHero";
+import BlogHero from "@/app/components/shared/BlogHero";
 
 type PageProps = {
   params: Promise<{
@@ -41,7 +41,7 @@ const page = async ({ params }: PageProps) => {
     }
     return (
       <div className="bg-primary first-porto sec-porto ">
-        <CustomHero title="blogs" description={blog.title} />
+        <BlogHero title="blogs" description={blog.title} />
         <div className="px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-24 xl:px-[120px] ">
           <div className="flex flex-col-reverse xl:flex-row  items-start  gap-8  ">
             <LeftSide />
