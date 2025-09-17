@@ -1,10 +1,10 @@
 interface BCategory {
-    id: number;
-    language_id: number;
-    name: string;
-    slug: string;
-    status: number;
-
+  id: number;
+  language_id: number;
+  name: string;
+  name_ar: string | null;
+  slug: string;
+  status: number;
 }
 
 export interface PortfolioItem {
@@ -20,28 +20,29 @@ export interface PortfolioItem {
   image_url: string;
 }
 
-
 export interface BlogPost {
-    id: number;
-    title: string;
-    slug: string;
-    content: any;
-    main_image_url: string;
-    bcategory: BCategory;
-    bcategory_id: number;
-    language_id: number;
-    created_at: string;
-    updated_at: string;
-    meta_description: string | null;
-    meta_keywords: string;
-    serial_number: number;
-    sidebar: number;
-}[]
+  id: number;
+  title: string;
+  title_ar: string | null;
+  slug: string;
+  content: any;
+  content_ar: any | null;
+  main_image_url: string;
+  bcategory: BCategory;
+  bcategory_id: number;
+  language_id: number;
+  created_at: string;
+  updated_at: string;
+  meta_description: string | null;
+  meta_keywords: string;
+  serial_number: number;
+  sidebar: number;
+}
+[];
 export interface JobItem {
   id: string;
   title: string;
 }
-
 
 export interface JobsCategory {
   id: string;
@@ -49,19 +50,18 @@ export interface JobsCategory {
 }
 export const portfolioItems = [
   {
-    src: '/about/portfolio/1.svg',
-    label: 'Web Development',
+    src: "/about/portfolio/1.svg",
+    label: "Web Development",
   },
   {
-    src: '/about/portfolio/2.svg',
-    label: 'Branding',
+    src: "/about/portfolio/2.svg",
+    label: "Branding",
   },
   {
-    src: '/about/portfolio/3.svg',
-    label: 'Social Media',
+    src: "/about/portfolio/3.svg",
+    label: "Social Media",
   },
 ];
-
 
 export interface Job {
   id: number;
@@ -77,16 +77,15 @@ export interface JobsData {
   positions: Job;
 }
 
-
-
 export interface Gif {
   id: number;
   title: string;
   description: string;
   image_url: string;
-}[];
-
+}
+[];
 
 export interface Trik {
   image_url: string;
-}[];
+}
+[];

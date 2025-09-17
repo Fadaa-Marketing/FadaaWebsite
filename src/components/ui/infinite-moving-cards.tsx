@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { beforeNavigate } from '../../app/utils/navigation';
+import { beforeNavigate } from '../../app/[locale]/utils/navigation';
 export const InfinitePlanets = ({
   planets = [],
   speed = 20,

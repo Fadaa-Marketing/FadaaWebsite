@@ -1,0 +1,357 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About us",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blogs": "Blogs",
+    "contact": "Contact us",
+    "jobs": "Jobs"
+  },
+  "footer": {
+    "description": "We provide professional digital solutions tailored to your business needs.",
+    "menu": "Menu",
+    "services": "Services",
+    "contact": "Contact",
+    "nav": {
+      "home": "Home",
+      "about": "About us",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "blogs": "Blogs",
+      "contact": "Contact us",
+      "jobs": "Jobs"
+    },
+    "serviceList": {
+      "socialMedia": "Social Media",
+      "website": "Website",
+      "seo": "SEO",
+      "mediaProduction": "Media Production",
+      "branding": "Branding",
+      "reels": "Reels",
+      "mobileApplication": "Mobile Application",
+      "mediaBuying": "Media Buying"
+    },
+    "copyright": "© 2025 Your Company. All rights reserved."
+  },
+  "home": {
+    "h1": "Fadaa Marketing Agency",
+    "hero": {
+      "title": "Launch your brand beyond limits",
+      "subtitle": "At FADAA, we craft digital marketing strategies, websites, and apps that take your business from ground level to orbit.",
+      "button": "Our Portfolio"
+    },
+    "about": {
+      "kicker": "About Fadaa",
+      "title": "Know Your Astronaut",
+      "p1": "We are Fadaa Marketing Agency a team of strategists, designers, tech innovators, and digital explorers who believe in pushing boundaries. From digital campaigns to cutting-edge websites and apps, we turn ideas into impactful experiences.",
+      "p2": "We partner with ambitious brands to craft bold stories, build unforgettable identities, and engineer results-driven growth. Whether it’s launching a startup or scaling an enterprise, we blend creativity with data to spark engagement, drive performance, and shape the future of digital presence.",
+      "button": "Know More"
+    },
+    "purpose": {
+      "title": "Our Purpose and Direction",
+      "items": [
+        {
+          "title": "Our Story",
+          "description": "To become the go to agency for ambitious brands ready to grow beyond gravity and lead the MENA region’s digital space with bold thinking and results that speak."
+        },
+        {
+          "title": "Our Vision",
+          "description": "To become the go to agency for ambitious brands ready to grow beyond gravity and lead the MENA region’s digital space with bold thinking and results that speak."
+        },
+        {
+          "title": "Our Mission",
+          "description": "To become the go to agency for ambitious brands ready to grow beyond gravity and lead the MENA region’s digital space with bold thinking and results that speak."
+        }
+      ]
+    }
+  },
+  "contact": {
+    "callUs": "Call Us",
+    "emailUs": "Email Us",
+    "visitUs": "Visit Us",
+    "contactUs": "Contact Us",
+    "formTitle": "Get in Touch",
+    "formSubtitle": "We’re here to answer your questions and support your needs."
+  },
+  "error": {
+    "title": "Something Went Wrong",
+    "tryAgain": "Try Again",
+    "errorCaught": "Error caught by useErrorHandler:",
+    "unhandledRejection": "Unhandled promise rejection:",
+    "globalError": "Global error event:",
+    "promiseRejected": "Promise rejected"
+  },
+  "counter": {
+    "items": [
+      { "end": 4, "suffix": "k+", "label": "Customer satisfaction" },
+      { "end": 820, "suffix": "", "label": "Average growth" },
+      { "end": 120, "suffix": "", "label": "Daily data input" },
+      { "end": 90, "suffix": "+", "label": "Passionate Employees" }
+    ]
+  },
+  "Services": {
+    "title": "Services",
+    "subtitle": "Services That Drive Growth"
+  },
+  "Portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Work that speaks, Results that show",
+    "button": "View All",
+    "slides": {
+      "social": {
+        "title": "Social Media",
+        "text": "Building your presence, engaging your audience, and growing your brand across platforms"
+      },
+      "branding": {
+        "title": "Branding",
+        "text": "Crafting a unique identity that reflects your business values and leaves a lasting impression"
+      },
+      "media": {
+        "title": "Media Production",
+        "text": "Creating high-quality visuals and videos that tell your story and capture attention"
+      },
+      "websites": {
+        "title": "Websites",
+        "text": "Designing and developing modern, responsive websites that deliver results and great user experiences"
+      }
+    }
+  },
+  "Clients": {
+    "title": "Our Clients",
+    "subtitle": "Partners in Success"
+  },
+  "Blogs": {
+    "subtitle": "our latest",
+    "title": "News & Announcements",
+    "button": "View All"
+  },
+  "globalErrorHandler": {
+    "caught": "Global error handler caught:",
+    "contextErrorDetected": "Context error detected, attempting to recover...",
+    "contextErrorConsole": "Context error detected in console:"
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "Fadaa Marketing | About Us",
+      "description": "We come from space to guide brands across the ever-expanding marketing universe"
+    },
+    "title": "About Us"
+  },
+  "AboutHero": {
+    "ready": "READY",
+    "toTakeYour": "TO TAKE YOUR",
+    "marketing": "MARKETING",
+    "trip": "TRIP"
+  },
+  "AboutCompanySection": {
+    "whoWeAre": "WHO WE ARE",
+    "aboutOurCompany": "About Our Company"
+  },
+  "WhyUs": {
+    "title": "Why Choose Us",
+    "description": "We're not just another marketing agency. We're your strategic partners in building a brand that resonates across the digital universe.",
+    "cards": {
+      "strategy": {
+        "title": "Strategic Planning",
+        "description": "We create tailored strategies that align with your business goals."
+      },
+      "creativity": {
+        "title": "Creative Solutions",
+        "description": "Our team delivers innovative ideas that make your brand stand out."
+      },
+      "support": {
+        "title": "Ongoing Support",
+        "description": "We stay with you throughout the journey to ensure long-term success."
+      }
+    }
+  },
+  "OurAws": {
+    "title": "Our Awesome Portfolio",
+    "description": "A visual journey through the brands we’ve elevated and the stories we’ve brought to life.",
+    "button": "Know More"
+  },
+  "BlogSearch": {
+    "placeholder": "بحث",
+    "searching": "جارٍ البحث...",
+    "noResults": "لم يتم العثور على مقالات مطابقة."
+  },
+  "BlogsHero": {
+    "title": "Blogs",
+    "description": "Blogs – Fadaa Marketing Insights & Trends 2025"
+  },
+  "BlogsPage": {
+    "Filters": {
+      "title": "All Blogs",
+      "description": "Stay inspired and informed with our latest articles. From digital trends to campaign case studies, we share what moves the industry—and how we move with it.",
+      "categories": {
+        "all": "All",
+        "marketing": "Marketing",
+        "design": "Design",
+        "development": "Development",
+        "seo": "SEO",
+        "business": "Business",
+        "services": "Services",
+        "websites": "Website"
+      }
+    }
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "description": "Contact Fadaa Marketing — Let’s Start Your Digital Journey",
+    "FindUs": "Find Us",
+    "Here": "Here"
+  },
+  "JobsPage": {
+    "Hero": {
+      "title": "Careers at Fadaa Marketing",
+      "description": "Join the creative force that builds bold brands, challenges the ordinary, sparks ideas, and shapes the future through fearless innovation.",
+      "button": "Find Jobs"
+    },
+    "Team": {
+      "title": "Why Work with Fadaa?",
+      "description": "Discover what makes our cosmic workplace a launching pad for extraordinary careers and groundbreaking marketing missions.",
+      "members": [
+        {
+          "title": "Collaborative Excellence",
+          "text": "Our team thrives on creative collaboration and shared success"
+        },
+        {
+          "title": "Celebrating Wins",
+          "text": "Every achievement is a shared victory in our cosmic community"
+        },
+        {
+          "title": "Growth & Mentorship",
+          "text": "Personalized guidance to accelerate your career trajectory"
+        }
+      ],
+      "familyTitle": "Meet the FADAA Family",
+      "familyDescription": "A diverse constellation of creative minds working together to launch brands into new dimensions"
+    },
+    "ApplyForm": {
+      "title": "Submit your application"
+    },
+    "Opportunities": {
+      "title": "Current Opportunities",
+      "description": "Explore our open positions and find the perfect launchpad for your next career adventure in the marketing cosmos."
+    },
+    "Sidebar": {
+      "allPositions": "All positions",
+      "allJobs": "All Jobs",
+      "footerText": "We are always seeking talented people. In case you cannot find your desired position here, please send us your LinkedIn profile and give us your contact information. We will be in touch.",
+      "loadingJobs": "Loading jobs",
+      "noJobsFound": "No jobs found",
+      "matching": "matching",
+      "inCategory": "in this category."
+    },
+    "JobDetails": {
+      "loadingDetails": "Loading job details",
+      "jobDescription": "Job Description",
+      "qualifications": "Qualifications",
+      "responsibilities": "Responsibilities",
+      "showMore": "Show More",
+      "showLess": "Show Less",
+      "applyNow": "Apply Now"
+    },
+    "SearchBar": {
+      "placeholder": "Search"
+    },
+    "Meta": {
+      "title": "Fadaa Marketing | Jobs",
+      "description": "We come from space to guide brands across the ever-expanding marketing universe"
+    }
+  },
+  "socials": {
+    "followUs": "Follow us on social to see",
+    "whatWeAreUpTo": "what we're up to!"
+  },
+  "portfolio": {
+    "metadata": {
+      "title": "Fadaa Marketing | Portfolio",
+      "description": "We come from space to guide brands across the ever-expanding marketing universe"
+    },
+    "hero": {
+      "title": "Our Portfolio",
+      "description": "Our Portfolio – Pushing Digital Boundaries"
+    }
+  },
+  "category": {
+    "loading": "Loading"
+  },
+  "jobsForm": {
+    "resume": "Resume / CV",
+    "position": "Position you're applying for",
+    "selectPosition": "Select position",
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Full Name",
+    "phone": "Phone number",
+    "phonePlaceholder": "Your phone number",
+    "email": "Email",
+    "emailPlaceholder": "Email",
+    "successMessage": "Application submitted successfully!",
+    "submitting": "Submitting...",
+    "submit": "Submit application",
+    "validation": {
+      "positionRequired": "Position is required",
+      "fullNameRequired": "Full name is required",
+      "invalidEmail": "Invalid email address",
+      "phoneRequired": "Phone number is required",
+      "fileSize": "File size should be less than 5MB"
+    },
+    "submissionError": "Submission failed"
+  },
+  "servicesPage": {
+    "metadata": {
+      "title": "Fadaa Marketing | Services",
+      "description": "We come from space to guide brands across the ever-expanding marketing universe"
+    },
+    "hero": {
+      "title": "Services",
+      "description": "Services That Drive Your Brand Forward"
+    }
+  },
+  "thankYouPage": {
+    "title": "Thank You!",
+    "message": "Your message has been sent successfully. We'll get back to you soon!",
+    "goHome": "Go Home Now",
+    "goBack": "Go Back"
+  },
+  "contactform": {
+    "placeholders": {
+      "first_name": "First Name",
+      "last_name": "Last Name",
+      "email": "Email",
+      "phone": "Your phone number",
+      "subject": "Select subject",
+      "message": "Your message"
+    },
+    "subjects": ["Social Media", "Website", "SEO", "Media Production", "Other"],
+    "buttons": {
+      "send": "Send Message",
+      "sending": "Sending..."
+    }
+  },
+  "gifSection": {
+    "howWeWork": "How We Work",
+    "ourApproach": "Our Approach"
+  },
+  "sharedService": {
+    "brandsWorkedWith": "Brands we have worked with"
+  },
+  "portoserv": {
+    "portfolio": "Portfolio",
+    "TakeALook": "Take A Look",
+    "AtOtherTrips": "At Other Trips"
+  },  "notFound": {
+    "backToHome": "Back To Home",
+    "altText": "Page not found illustration"
+  },"homeBlog":{
+    "Readmore":"Read More"
+  },  "leftSide": {
+    "popularBlogs": "Popular Blogs",
+    "services": "Services",
+    "contactUs": "Contact Us"
+  },"blogs":{
+    "blogs":"Blogs"
+    }
+}

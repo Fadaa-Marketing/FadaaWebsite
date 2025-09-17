@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { beforeNavigate } from '../../app/utils/navigation';
+import { beforeNavigate } from '../../app/[locale]/utils/navigation';
 export const InfiniteMovingCards = ({
   items,
   planets,

@@ -279,31 +279,28 @@ export const servicePort = [
 ]
 
 
+// constant/portfolio.ts
 export const portfolio = [
   {
-    imageUrl:'/portfolio/home/1.jpg',
-    mobileImageUrl:'/portfolio/home/mob1.jpg',
-    title:'Social Media',
-    text:'Building your presence, engaging your audience, and growing your brand across platforms'
+    imageUrl: '/portfolio/home/1.jpg',
+    mobileImageUrl: '/portfolio/home/mob1.jpg',
+    key: 'social' // 👈 unique key for translation
   },
   {
-    imageUrl:'/portfolio/home/2.jpg',
-    mobileImageUrl:'/portfolio/home/mob2.jpg',
-    title:'Branding',
-    text:'Crafting a unique identity that reflects your business values and leaves a lasting impression'
+    imageUrl: '/portfolio/home/2.jpg',
+    mobileImageUrl: '/portfolio/home/mob2.jpg',
+    key: 'branding'
   },
   {
-    imageUrl:'/portfolio/home/3.jpg',
-    mobileImageUrl:'/portfolio/home/mob3.jpg',
-    title:'Media Production',
-    text:'Creating high-quality visuals and videos that tell your story and capture attention'
+    imageUrl: '/portfolio/home/3.jpg',
+    mobileImageUrl: '/portfolio/home/mob3.jpg',
+    key: 'media'
   },
   {
-    imageUrl:'/portfolio/home/4.jpg',
-    mobileImageUrl:'/portfolio/home/mob4.jpg',
-    title:'Websites',
-    text:'Designing and developing modern, responsive websites that deliver results and great user experiences'
-  },
+    imageUrl: '/portfolio/home/4.jpg',
+    mobileImageUrl: '/portfolio/home/mob4.jpg',
+    key: 'websites'
+  }
 ];
 
 
