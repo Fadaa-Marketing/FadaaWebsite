@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules"; 
 import "swiper/css";
 import "swiper/css/navigation"; 
+import { useTranslations } from "next-intl";
 interface PortoSEOProps {
   data: PortfolioItem[];
 }
@@ -19,7 +20,14 @@ const PortoSocialdd = ({ data }: PortoSEOProps) => {
   };
 
   const mobileChunks = chunkArray(data, 3);
-
+  const t =useTranslations("porto")
+  if (!data.length) {
+    return (
+      <div className="text-center py-10 text-gray-500">
+        {t("Noportfolioitemsfound")}
+      </div>
+    );
+  }
   return (
     <div className="pt-[50px] pb-[80px] x-padding mx-auto">
       <div className="hidden sm:grid grid-cols-12 gap-4">

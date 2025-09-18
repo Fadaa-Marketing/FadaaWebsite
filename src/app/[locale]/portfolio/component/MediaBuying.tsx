@@ -6,6 +6,7 @@ import LoadingImage from "../../components/shared/loadingImage";
 import { useEffect, useState } from 'react';
 import { useScreenSize } from "../../components/shared/useScreenSize";
 import { getPortoData } from "@/lib/api";
+import { useTranslations } from "next-intl";
 
 interface MediaBuyingProps {
   categoryId: number; // Changed from data to categoryId
@@ -16,7 +17,7 @@ const MediaBuying = ({ categoryId }: MediaBuyingProps) => {
   const [data, setData] = useState<PortfolioItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+  const t = useTranslations("porto")
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -54,7 +55,7 @@ const MediaBuying = ({ categoryId }: MediaBuyingProps) => {
   if (!data.length) {
     return (
       <div className="text-center py-10 text-gray-500">
-        No media buying items found
+        {t("Noportfolioitemsfound")}
       </div>
     );
   }

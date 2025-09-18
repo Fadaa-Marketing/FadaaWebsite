@@ -24,7 +24,7 @@ export default async function Home({ params }: HomeProps) {
   return (
     <div className="overflow-hidden">
       <h1 className="hidden">{t("h1")}</h1>
-      <HeroSection />
+      <HeroSection locale={locale} />
       <Counter />
       <AboutSection locale={locale} />
       <Purpose />

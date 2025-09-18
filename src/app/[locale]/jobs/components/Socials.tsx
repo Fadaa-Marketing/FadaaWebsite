@@ -98,13 +98,14 @@ const Socials: React.FC<SocialsProps> = async ({
         <div className="grid grid-cols-2 gap-6">
           {socialData?.map((item, key) => {
             const socialName = getSocialName(item.icon);
+
             return (
               <a
                 key={key}
                 target="_blank"
                 href={item?.url}
                 rel="noopener noreferrer"
-                className="flex items-center w-fit gap-3"
+                className="flex items-center w-fit gap-3 font-aloevera"
               >
                 <div className="p-3 bg-secondary text-primary rounded-full text-xl">
                   {socialName ? (

@@ -7,15 +7,15 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { slug, locale } = await params;
+  const { slug } = await params;
   try {
     const service = await getSingleService(slug);
-    const title = locale === "ar" ? service?.title_ar : service?.title;
+
     if (!service) {
       notFound();
     }
     return {
-      title: `Fadaa Marketing | ${title}`,
+      title: `Fadaa Marketing | ${service?.title}`,
       description: service?.meta_description || "Services",
       keywords: service?.meta_keywords ? service.meta_keywords.split(",") : [],
     };

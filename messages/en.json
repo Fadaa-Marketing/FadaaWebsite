@@ -360,5 +360,11 @@
   },
   "read": {
     "read": "Read more"
+  },
+  "serviceSteps": {
+    "step": "Step"
+  },
+  "porto": {
+    "Noportfolioitemsfound": "No portfolio items found"
   }
 }

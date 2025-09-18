@@ -6,13 +6,13 @@ import { getContactData } from "@/lib/api";
 import ContactMap from "./components/ContactMap";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { URLSearchParams } from "node:url";
 
 export const metadata: Metadata = {
   title: "Fadaa Marketing | Contact Us",
   description:
     "We come from space to guide brands across the ever-expanding marketing universe",
 };
+
 interface PropPage{
   params: {
     locale: string;
@@ -20,8 +20,9 @@ interface PropPage{
 }
 const page = async ({params}:PropPage) => {
   const t = await getTranslations("ContactPage");
-  const contactData = await getContactData();
   const {locale} = await params
+  const concat = await getContactData();
+  const contactData = locale === "ar" ? concat?.ar : concat?.en;
   return (
     <div className="bg-primary">
       <div className="sec-porto mx-auto">

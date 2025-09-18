@@ -14,22 +14,22 @@ type PageProps = {
   };
 };
 
-// Generate metadata for SEO
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug, locale } = params;
+  const { slug } = await params;
   try {
     const blog = await getSingleBlog(slug);
-    if (!blog) notFound();
-
-    const title = locale === "ar" && blog.title_ar ? blog.title_ar : blog.title;
-
+    if (!blog) {
+      notFound();
+    }
     return {
-      title: `Fadaa Marketing | ${title}`,
+      title: `Fadaa Marketing | ${blog.title}`,
       description: blog.meta_description || "Default SEO description...",
       keywords: blog.meta_keywords ? blog.meta_keywords.split(",") : [],
     };
   } catch (error: any) {
-    if (error?.response?.status === 404) notFound();
+    if (error?.response?.status === 404) {
+      notFound();
+    }
     throw error;
   }
 }

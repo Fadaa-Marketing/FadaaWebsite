@@ -11,7 +11,7 @@ import { getMessages } from "next-intl/server";
 import { routing } from "../../../i18n/routing";
 
 export const metadata: Metadata = {
-  title: "Fadaa Marketing",
+  title: "Fadaa Marketing | Home",
   description:
     "We come from space to guide brands across the ever-expanding marketing universe",
   manifest: "/manifest.json",

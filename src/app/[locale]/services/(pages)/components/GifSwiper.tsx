@@ -8,10 +8,11 @@ import "swiper/css/pagination";
 // import LoadingImage from "../../../components/shared/loadingImage";
 import { Gif } from "@/types";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
-export const GifSwiper = ({ gif ,locale }: { gif: Gif[]; locale:string }) => {
+export const GifSwiper = ({ gif, locale }: { gif: Gif[]; locale: string }) => {
   const [isMobile, setIsMobile] = useState(false);
-
+  const t = useTranslations("serviceSteps");
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -48,7 +49,7 @@ export const GifSwiper = ({ gif ,locale }: { gif: Gif[]; locale:string }) => {
                 src={item.image_url}
                 alt="loading"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                 fill
+                fill
                 className="rounded-3xl object-cover"
               />
             </div>
@@ -62,13 +63,13 @@ export const GifSwiper = ({ gif ,locale }: { gif: Gif[]; locale:string }) => {
             "
             >
               <span className="text-[10px] sm:text-xs rounded-full px-2 sm:px-3 py-1 bg-[#3E009EED] uppercase tracking-widest mb-2 block w-fit">
-                Step 0{key + 1}
+                {t("step")} 0{key + 1}
               </span>
               <p className="text-white text-lg sm:text-3xl font-medium mb-1 sm:mb-2">
-                {locale ==="ar"?item?.title_ar:item?.title}
+                {locale === "ar" ? item?.title_ar : item?.title}
               </p>
               <p className="text-white text-xs sm:text-lg">
-                {locale === "ar"?item?.description_ar:item?.description}
+                {locale === "ar" ? item?.description_ar : item?.description}
               </p>
             </div>
           </div>

@@ -1,10 +1,19 @@
 import { PortfolioItem } from "@/types";
 import LoadingImage from "../../components/shared/loadingImage";
+import { useTranslations } from "next-intl";
 interface PortoSEOProps {
   data: PortfolioItem[];
 }
 
 const MediaProduction = ({ data }: PortoSEOProps) => {
+  const t = useTranslations("porto");
+  if (!data.length) {
+    return (
+      <div className="text-center py-10 text-gray-500">
+        {t("Noportfolioitemsfound")}
+      </div>
+    );
+  }
   return (
     <>
       <div className="pt-[50px] pb-[80px] x-padding mx-auto">
@@ -25,11 +34,11 @@ const MediaProduction = ({ data }: PortoSEOProps) => {
                 {...wrapperProps}
                 className="relative group w-full overflow-hidden col-span-12 sm:col-span-6 lg:col-span-4"
               >
-            <LoadingImage
-              src={items.image_url}
-              alt="Portfolio"
-              className="object-cover w-full h-auto transition-transform duration-300 group-hover:scale-105"
-            />
+                <LoadingImage
+                  src={items.image_url}
+                  alt="Portfolio"
+                  className="object-cover w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                />
                 {items.title && items.title !== "null" && (
                   <div className="absolute bottom-0 left-0 w-full flex items-center justify-center">
                     <div className="bg-black/60 text-white py-2 px-4 rounded-t-lg text-center xl:text-[20px] lg:text-[19px] md:text-[17px] sm:text-[16px] text-[15px] uppercase font-[500] w-full transform translate-y-full group-hover:translate-y-0 transition-all duration-300">

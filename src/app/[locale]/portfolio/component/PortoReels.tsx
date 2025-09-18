@@ -1,10 +1,19 @@
 import { PortfolioItem } from "@/types";
 import LoadingImage from "../../components/shared/loadingImage";
+import { useTranslations } from "next-intl";
 interface PortoReelsProps {
   data: PortfolioItem[];
 }
 
 const PortoReels = ({ data }: PortoReelsProps) => {
+  const t =useTranslations("porto")
+  if (!data.length) {
+    return (
+      <div className="text-center py-10 text-gray-500">
+        {t("Noportfolioitemsfound")}
+      </div>
+    );
+  }
   return (
     <div className="pt-[50px] pb-[80px] x-padding mx-auto">
       <div className="grid grid-cols-12 gap-4">

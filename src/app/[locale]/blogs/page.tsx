@@ -5,15 +5,13 @@ import { BlogPost } from "@/types";
 import BlogsHero from "./components/BlogsHero";
 import FormSection from "../components/shared/FormSection";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("BlogsHero");
-  return {
-    title: t("title"),
-    description: t("description"),
-  };
-}
+export const metadata: Metadata = {
+  title: "Fadaa Marketing | Blogs",
+  description:
+    "We come from space to guide brands across the ever-expanding marketing universe",
+};
+
 type PageProps = {
   params: {
     locale: string;

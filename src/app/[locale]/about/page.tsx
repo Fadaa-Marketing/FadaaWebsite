@@ -10,25 +10,22 @@ import { getAboutData, getAboutWhyUs, getAllGallery } from "@/lib/api";
 import ServicesNew from "../components/shared/ServicesNew";
 import { getTranslations } from "next-intl/server";
 
-export async function generateMetadata({ params: { locale } }: any): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: "AboutPage" });
-
-  return {
-    title: t("meta.title"),
-    description: t("meta.description"),
+export const metadata: Metadata = {
+  title: "Fadaa Marketing | About Us",
+  description:
+    "We come from space to guide brands across the ever-expanding marketing universe",
+};
+interface PropPage {
+  params: {
+    locale: string;
   };
 }
-interface PropPage{
-  params:{
-    locale:string
-  }
-}
-export default async function Page({params}:PropPage) {
+export default async function Page({ params }: PropPage) {
   const aboutData = await getAboutData();
   const aboutWhy = await getAboutWhyUs();
   const allGallery = await getAllGallery();
   const t = await getTranslations("AboutPage");
-  const {locale} = await params
+  const { locale } = await params;
   return (
     <>
       <div className="bg-primary">
@@ -46,7 +43,7 @@ export default async function Page({params}:PropPage) {
           <div className="bg-[url('/about/leftTop.png')] bg-no-repeat bg-top-left">
             <ServicesNew locale={locale} classpt="lg:pt-0 lg:pb-[60px]" />
           </div>
-          <FormSection locale={locale}/>
+          <FormSection locale={locale} />
         </div>
       </div>
     </>

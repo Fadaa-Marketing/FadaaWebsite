@@ -113,8 +113,18 @@ export const getAllGallery = async () => {
 
 export const getPortoData = async (categoryId: number, isMobile: boolean = false) => {
   try {
+    // Ensure we hit the localized API route under `[locale]/api/portfolio`
+    let localePrefix = "";
+    if (typeof window !== "undefined") {
+      const segments = window.location.pathname.split("/").filter(Boolean);
+      // Expect path like /en/..., so first segment is the locale
+      if (segments.length > 0) {
+        localePrefix = `/${segments[0]}`;
+      }
+    }
+
     const res = await fetch(
-      `/api/portfolio?categoryId=${categoryId}&view_from=${isMobile ? 'mobile' : 'web'}`,
+      `${localePrefix}/api/portfolio?categoryId=${categoryId}&view_from=${isMobile ? 'mobile' : 'web'}`,
       {
         method: "GET",
         cache: "no-store",

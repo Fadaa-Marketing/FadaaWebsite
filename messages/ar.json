@@ -367,5 +367,11 @@
   },
   "read": {
     "read": "اقرأ المزيد"
+  },
+  "serviceSteps": {
+    "step": "خطوة"
+  },
+  "porto": {
+    "Noportfolioitemsfound": "لم يتم العثور على عناصر في المعرض"
   }
 }

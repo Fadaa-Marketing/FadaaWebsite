@@ -1,5 +1,6 @@
 import { PortfolioItem } from "@/types";
 import LoadingImage from "../../components/shared/loadingImage";
+import { useTranslations } from "next-intl";
 interface PortoSEOProps {
   data: PortfolioItem[];
 }
@@ -9,7 +10,14 @@ const PortoWeb = ({ data }: PortoSEOProps) => {
   for (let i = 0; i < data.length; i += 3) {
     chunked.push(data.slice(i, i + 3));
   }
-
+  const t = useTranslations("porto");
+  if (!data.length) {
+    return (
+      <div className="text-center py-10 text-gray-500">
+        {t("Noportfolioitemsfound")}
+      </div>
+    );
+  }
   return (
     <div className="pt-[50px] pb-[80px] x-padding mx-auto">
       {chunked?.map((group, groupIdx) => (
