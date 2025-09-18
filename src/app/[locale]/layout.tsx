@@ -49,14 +49,6 @@ export default async function localeLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-        {/* ✅ Load Flat Font only for Arabic */}
-        {locale === "ar" && (
-          <link
-            rel="stylesheet"
-            href="https://fonts.jozoor.com/flat-font/flat-font.css"
-          />
-        )}
-
         {/* GTM */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
@@ -88,7 +80,7 @@ export default async function localeLayout({
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
         />
       </head>
-      <body className={locale === "ar" ? "font-flat" : ""}>
+      <body className={locale === "ar" ? "font-arabic" : "font-aloevera"}>
         <NextIntlClientProvider messages={messages}>
           <GlobalErrorHandler>
             <CustomRouteProgress />

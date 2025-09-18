@@ -42,14 +42,28 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "FlatArabic";
+  src: url("./fonts/JF_FLAT_REGULAR.eot");
+  src: url("./fonts/JF_FLAT_REGULAR.eot?#iefix") format("embedded-opentype"),
+       url("./fonts/JF_FLAT_REGULAR.ttf") format("truetype"),
+       url("./fonts/JF_FLAT_REGULAR.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 html {
   scroll-behavior: smooth;
 }
-/* Default Arabic font */
-.font-flat {
-  font-family: 'Flat', 'Arial', sans-serif !important;
+.font-aloevera {
+  font-family: "Aloevera", Arial, Helvetica, sans-serif !important;
 }
 
+.font-arabic {
+  font-family: "FlatArabic", Arial, sans-serif !important;
+}
 :root {
   --primary: #210039;
   --secondary: #8b18e7;
@@ -63,7 +77,6 @@ html {
 }
 
 body {
-  font-family: "Aloevera", Arial, Helvetica, sans-serif;
   color: white;
   background-color: var(--primary);
   letter-spacing: 0.025em;

@@ -30,7 +30,7 @@ const ServicesPage = async ({ params }: PropsPage) => {
           <CustomHero
             title={t("hero.title") || "Services"}
             description={
-              t("herdescription") || "Services That Drive Your Brand Forward"
+              t("hero.description") || "Services That Drive Your Brand Forward"
             }
             clssremover=""
           />
