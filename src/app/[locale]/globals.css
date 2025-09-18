@@ -45,6 +45,10 @@
 html {
   scroll-behavior: smooth;
 }
+/* Default Arabic font */
+.font-flat {
+  font-family: 'Flat', 'Arial', sans-serif !important;
+}
 
 :root {
   --primary: #210039;

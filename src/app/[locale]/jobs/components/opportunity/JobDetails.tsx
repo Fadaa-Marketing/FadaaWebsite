@@ -6,7 +6,7 @@ import DOMPurify from "isomorphic-dompurify";
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
-const JobDetails = ({ positions, locale }: JobsData & { locale: string }) => {
+const JobDetails = ({ positions }: JobsData ) => {
   const t = useTranslations("JobsPage.JobDetails");
 
   const [showMore, setShowMore] = useState(false);
@@ -15,13 +15,10 @@ const JobDetails = ({ positions, locale }: JobsData & { locale: string }) => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   // ✅ Locale-aware fields
-  const title = locale === "ar" ? positions?.title_ar : positions?.title;
-  const jobDescription =
-    locale === "ar" ? positions?.job_description_ar : positions?.job_description;
-  const qualifications =
-    locale === "ar" ? positions?.qualifications_ar : positions?.qualifications;
-  const responsibility =
-    locale === "ar" ? positions?.responsibility_ar : positions?.responsibility;
+  const title = positions?.title;
+  const jobDescription = positions?.job_description;
+  const qualifications = positions?.qualifications;
+  const responsibility = positions?.responsibility;
 
   // ✅ Sanitize HTML
   const cleanHtml1 = DOMPurify.sanitize(jobDescription || "");

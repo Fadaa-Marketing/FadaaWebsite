@@ -17,7 +17,7 @@ const Opportunities = async ({ jobsCategory ,locale}: any) => {
         <p className="main-text">{t("description")}</p>
       </div>
       <div className="my-14">
-        <Sidebar locale={locale} jobsCategory={jobsCategory} />
+        <Sidebar jobsCategory={jobsCategory} />
       </div>
       <ApplyForm selectJob={selectJob} />
     </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-const AboutHero = () => {
+const AboutHero = ({ locale }: { locale: string }) => {
   const t = useTranslations("AboutHero");
 
   return (
@@ -25,7 +25,10 @@ const AboutHero = () => {
           </span>
         </div>
         {/* TO TAKE YOUR */}
-        <span className="capitalize text-[#9400FF] font-[700] lg:leading-[62.9px] text-3xl sm:text-4xl md:text-5xl lg:text-[96px]">
+        <span
+          className={`capitalize text-[#9400FF] text-3xl sm:text-4xl md:text-5xl lg:text-[96px] font-[700] ${
+            locale === "ar" ? "" : "lg:leading-[62.9px]"} `}
+        >
           {t("toTakeYour")}
         </span>
         {/* MARKETING TRIP */}

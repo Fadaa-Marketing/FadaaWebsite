@@ -9,6 +9,7 @@ import MetadataHandler from "./components/MetadataHandler";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { routing } from "../../../i18n/routing";
+
 export const metadata: Metadata = {
   title: "Fadaa Marketing",
   description:
@@ -47,6 +48,16 @@ export default async function localeLayout({
         />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+        {/* ✅ Load Flat Font only for Arabic */}
+        {locale === "ar" && (
+          <link
+            rel="stylesheet"
+            href="https://fonts.jozoor.com/flat-font/flat-font.css"
+          />
+        )}
+
+        {/* GTM */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -77,7 +88,7 @@ export default async function localeLayout({
           src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
         />
       </head>
-      <body>
+      <body className={locale === "ar" ? "font-flat" : ""}>
         <NextIntlClientProvider messages={messages}>
           <GlobalErrorHandler>
             <CustomRouteProgress />

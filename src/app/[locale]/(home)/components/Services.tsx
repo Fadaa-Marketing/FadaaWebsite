@@ -6,7 +6,7 @@ const Services = async ({locale}:{locale:string}) => {
   const t = await getTranslations('Services');
 
   return (
-    <section dir="ltr" className="bg-primary y-padding sec-porto">
+    <section className="bg-primary y-padding sec-porto">
       <SectionTitle 
         title={t('title')} 
         text={t('subtitle')} 

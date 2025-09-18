@@ -18,7 +18,11 @@ export default function AboutCompanySection({ aboutData, locale }: any) {
   return (
     <section className="main-padding lg:py-0 grid grid-cols-1 lg:grid-cols-12 items-start justify-center gap-10">
       {/* Left: About Text */}
-      <div className="lg:col-span-7 flex-1 text-left">
+      <div
+        className={`lg:col-span-7 flex-1 ${
+          locale === "ar" ? "text-right" : "text-left"
+        }`}
+      >
         <div className="flex flex-col justify-center items-center md:justify-start md:flex-row gap-4 mb-6">
           <span className="bg-[#FFFFFF1A] w-fit text-white text-center text-[12px] font-[500] md:px-[22px] px-[18px] py-[8px] md:py-[10px] rounded-full ">
             {t("whoWeAre")}

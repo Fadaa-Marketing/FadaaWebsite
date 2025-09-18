@@ -14,10 +14,9 @@ interface JobCategory {
 
 interface SidebarProps {
   jobsCategory: JobCategory[];
-  locale: string;
 }
 
-const Sidebar = ({ jobsCategory, locale }: SidebarProps) => {
+const Sidebar = ({ jobsCategory }: SidebarProps) => {
   const t = useTranslations("JobsPage.Sidebar");
 
   const [selectedCatId, setSelectedCatId] = useState<number | null>(null);
@@ -38,9 +37,8 @@ const Sidebar = ({ jobsCategory, locale }: SidebarProps) => {
     fetchJobs();
   }, [selectedCatId]);
 
-  // ✅ Locale-aware job search
   const filteredJobs = allJobs?.filter((job: any) => {
-    const jobTitle = locale === "ar" ? job?.title_ar : job?.title;
+    const jobTitle = job?.title;
     return jobTitle?.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
@@ -74,7 +72,7 @@ const Sidebar = ({ jobsCategory, locale }: SidebarProps) => {
                 onClick={() => setSelectedCatId(item.id)}
                 className={buttonStyle(selectedCatId === item.id)}
               >
-                {locale === "ar" ? item.name_ar : item.name}
+                {item?.name}
               </button>
             ))}
           </div>
@@ -98,7 +96,7 @@ const Sidebar = ({ jobsCategory, locale }: SidebarProps) => {
       ) : filteredJobs.length > 0 ? (
         <div className="flex flex-col gap-10 w-full">
           {filteredJobs?.map((item, key) => (
-            <JobDetails key={key} positions={item} locale={locale} />
+            <JobDetails key={key} positions={item} />
           ))}
         </div>
       ) : (

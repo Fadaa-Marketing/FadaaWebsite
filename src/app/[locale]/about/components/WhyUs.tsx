@@ -39,10 +39,18 @@ export default async function WhyUs({ aboutWhy, locale }: any) {
                   className="w-[20px] h-[20px]"
                 />
               </div>
-              <h3 className="text-[22px] md:text-[25px] font-[500] text-white mb-3 uppercase text-left ">
+              <h3
+                className={`text-[22px] md:text-[25px] font-[500] text-white mb-3 uppercase ${
+                  locale === "ar" ? "text-right" : "text-left"
+                }`}
+              >
                 {locale === "ar" ? card?.title_ar : card?.title}
               </h3>
-              <p className="text-base md:text-[18px] text-[#CFCFCF] opacity-90 text-left font-[500]">
+              <p
+                className={`text-base md:text-[18px] text-[#CFCFCF] opacity-90 ${
+                  locale === "ar" ? "text-right" : "text-left"
+                } font-[500]`}
+              >
                 {locale === "ar" ? card?.description_ar : card?.description}
               </p>
             </div>

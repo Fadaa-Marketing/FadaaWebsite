@@ -17,7 +17,7 @@ const ServicesNew = async ({
     link: `/services/${service?.slug}`,
   }));
   return (
-    <div className={` ${classpt} `}>
+    <div dir="ltr" className={` ${classpt} `}>
       <InfiniteMovingCards
         planets={formattedServices}
         direction="right"

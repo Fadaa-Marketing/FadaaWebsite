@@ -34,7 +34,7 @@ export default async function Page({params}:PropPage) {
       <div className="bg-primary">
         <h1 className="hidden">{t("title")}</h1>
         <div className="sec-porto">
-          <AboutHero />
+          <AboutHero locale={locale} />
           <div className="bg-[url('/about/leftCenter.png')] bg-no-repeat bg-bottom-left">
             <AboutCompanySection locale={locale} aboutData={aboutData} />
             <AboutFamily locale={locale} aboutData={aboutData} />
