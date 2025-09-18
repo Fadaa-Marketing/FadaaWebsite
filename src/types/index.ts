@@ -70,6 +70,11 @@ export interface Job {
   job_description: string;
   qualifications: string;
   responsibility: string;
+  title_ar: string;
+  employment_status_ar: string; // comma-separated string from the API
+  job_description_ar: string;
+  qualifications_ar: string;
+  responsibility_ar: string;
   // Add other fields if needed (meta_keywords, meta_description, etc.)
 }
 
@@ -81,6 +86,8 @@ export interface Gif {
   id: number;
   title: string;
   description: string;
+  title_ar: string;
+  description_ar: string;
   image_url: string;
 }
 [];

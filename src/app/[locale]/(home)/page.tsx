@@ -1,4 +1,12 @@
-import { AboutSection, Blogs, Clients, Counter, HeroSection, Purpose, Services } from "../components";
+import {
+  AboutSection,
+  Blogs,
+  Clients,
+  Counter,
+  HeroSection,
+  Purpose,
+  Services,
+} from "../components";
 import FormSection from "../components/shared/FormSection";
 import Portfolio from "./components/Portfolio";
 import { getTranslations } from "next-intl/server";
@@ -20,11 +28,11 @@ export default async function Home({ params }: HomeProps) {
       <Counter />
       <AboutSection locale={locale} />
       <Purpose />
-      <Services />
+      <Services locale={locale} />
       <Portfolio />
       <Clients />
       <Blogs locale={locale} />
-      <FormSection firstClass="bg-primary" secondClass="" />
+      <FormSection locale={locale} firstClass="bg-primary" secondClass="" />
     </div>
   );
 }

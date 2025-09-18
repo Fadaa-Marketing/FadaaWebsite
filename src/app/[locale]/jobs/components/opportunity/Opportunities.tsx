@@ -5,7 +5,7 @@ import { getSelectedJob } from "@/lib/api";
 import { JobItem } from "@/types/index";
 import { getTranslations } from "next-intl/server";
 
-const Opportunities = async ({ jobsCategory }: any) => {
+const Opportunities = async ({ jobsCategory ,locale}: any) => {
   const t = await getTranslations("JobsPage.Opportunities");
   const { success, data } = await getSelectedJob();
   const selectJob: JobItem[] = success && Array.isArray(data) ? data : [];
@@ -17,7 +17,7 @@ const Opportunities = async ({ jobsCategory }: any) => {
         <p className="main-text">{t("description")}</p>
       </div>
       <div className="my-14">
-        <Sidebar jobsCategory={jobsCategory} />
+        <Sidebar locale={locale} jobsCategory={jobsCategory} />
       </div>
       <ApplyForm selectJob={selectJob} />
     </div>

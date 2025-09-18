@@ -5,11 +5,11 @@ import { Autoplay, Keyboard, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import LoadingImage from "../../../components/shared/loadingImage";
+// import LoadingImage from "../../../components/shared/loadingImage";
 import { Gif } from "@/types";
 import Image from "next/image";
 
-export const GifSwiper = ({ gif }: { gif: Gif[] }) => {
+export const GifSwiper = ({ gif ,locale }: { gif: Gif[]; locale:string }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -65,10 +65,10 @@ export const GifSwiper = ({ gif }: { gif: Gif[] }) => {
                 Step 0{key + 1}
               </span>
               <p className="text-white text-lg sm:text-3xl font-medium mb-1 sm:mb-2">
-                {item.title}
+                {locale ==="ar"?item?.title_ar:item?.title}
               </p>
               <p className="text-white text-xs sm:text-lg">
-                {item.description}
+                {locale === "ar"?item?.description_ar:item?.description}
               </p>
             </div>
           </div>

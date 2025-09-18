@@ -10,10 +10,14 @@ export const metadata: Metadata = {
   description:
     "We come from space to guide brands across the ever-expanding marketing universe",
 };
-
-const ServicesPage = async () => {
+interface PropsPage {
+  params: {
+    locale: string;
+  };
+}
+const ServicesPage = async ({ params }: PropsPage) => {
   const t = await getTranslations("servicesPage");
-
+  const { locale } = await params;
   return (
     <div>
       <div className="relative overflow-hidden">
@@ -24,15 +28,18 @@ const ServicesPage = async () => {
         />
         <div className="relative z-10">
           <CustomHero
-            title={t("title") || "Services"}
-            description={t("description") || "Services That Drive Your Brand Forward"}
+            title={t("hero.title") || "Services"}
+            description={
+              t("herdescription") || "Services That Drive Your Brand Forward"
+            }
             clssremover=""
           />
-          <ServicesSection classpt="y-padding" />
+          <ServicesSection locale={locale} classpt="y-padding" />
         </div>
       </div>
 
       <FormSection
+        locale={locale}
         firstClass="bg-transparent"
         secondClass="xl:pt-[40px] lg:pt-[40px]"
       />

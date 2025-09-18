@@ -6,7 +6,7 @@ import DOMPurify from "isomorphic-dompurify";
 import React, { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
-const JobDetails = ({ positions }: JobsData) => {
+const JobDetails = ({ positions, locale }: JobsData & { locale: string }) => {
   const t = useTranslations("JobsPage.JobDetails");
 
   const [showMore, setShowMore] = useState(false);
@@ -14,9 +14,19 @@ const JobDetails = ({ positions }: JobsData) => {
   const [isLoading, setIsLoading] = useState(true);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const cleanHtml1 = DOMPurify.sanitize(positions?.job_description || "");
-  const cleanHtml2 = DOMPurify.sanitize(positions?.qualifications || "");
-  const cleanHtml3 = DOMPurify.sanitize(positions?.responsibility || "");
+  // ✅ Locale-aware fields
+  const title = locale === "ar" ? positions?.title_ar : positions?.title;
+  const jobDescription =
+    locale === "ar" ? positions?.job_description_ar : positions?.job_description;
+  const qualifications =
+    locale === "ar" ? positions?.qualifications_ar : positions?.qualifications;
+  const responsibility =
+    locale === "ar" ? positions?.responsibility_ar : positions?.responsibility;
+
+  // ✅ Sanitize HTML
+  const cleanHtml1 = DOMPurify.sanitize(jobDescription || "");
+  const cleanHtml2 = DOMPurify.sanitize(qualifications || "");
+  const cleanHtml3 = DOMPurify.sanitize(responsibility || "");
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 1000);
@@ -46,16 +56,18 @@ const JobDetails = ({ positions }: JobsData) => {
     );
   }
 
-  const plainTextDescription =
-    positions?.job_description?.replace(/<[^>]+>/g, "") || "";
+  // ✅ Locale-aware short description
+  const plainTextDescription = jobDescription?.replace(/<[^>]+>/g, "") || "";
   const shortDescription =
     plainTextDescription.slice(0, 150) +
     (plainTextDescription.length > 150 ? "..." : "");
 
   return (
     <div className="py-6 px-8 rounded-lg border bg-gradient-to-r from-primary to-[#590997] flex flex-col gap-6 relative transition-all duration-150">
-      <h1 className="text-[28px] capitalize font-medium">{positions.title}</h1>
+      {/* Title */}
+      <h1 className="text-[28px] capitalize font-medium">{title}</h1>
 
+      {/* Employment Status */}
       <div className="flex items-center gap-4">
         {positions?.employment_status
           ?.split(",")
@@ -70,7 +82,7 @@ const JobDetails = ({ positions }: JobsData) => {
       </div>
 
       {/* Truncated Description */}
-      {positions.job_description && !showMore && (
+      {jobDescription && !showMore && (
         <p className="text-white">{shortDescription}</p>
       )}
 
@@ -80,7 +92,7 @@ const JobDetails = ({ positions }: JobsData) => {
         className="transition-all duration-300 overflow-hidden"
       >
         <div ref={contentRef} className="text-[#eeeeee] flex flex-col pt-4">
-          {positions.job_description && (
+          {jobDescription && (
             <div className="border-b py-4 space-y-3">
               <h2 className="font-semibold text-xl text-secondary">
                 {t("jobDescription")}
@@ -88,7 +100,7 @@ const JobDetails = ({ positions }: JobsData) => {
               <p dangerouslySetInnerHTML={{ __html: cleanHtml1 }} />
             </div>
           )}
-          {positions.qualifications && (
+          {qualifications && (
             <div className="border-b py-4 space-y-3">
               <h2 className="font-semibold text-xl text-secondary">
                 {t("qualifications")}
@@ -96,7 +108,7 @@ const JobDetails = ({ positions }: JobsData) => {
               <p dangerouslySetInnerHTML={{ __html: cleanHtml2 }} />
             </div>
           )}
-          {positions.responsibility && (
+          {responsibility && (
             <div className="py-4 space-y-3">
               <h2 className="font-semibold text-xl text-secondary">
                 {t("responsibilities")}
@@ -107,6 +119,7 @@ const JobDetails = ({ positions }: JobsData) => {
         </div>
       </div>
 
+      {/* Actions */}
       <div className="place-self-end flex items-center gap-2">
         <button
           onClick={() => setShowMore(!showMore)}

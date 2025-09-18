@@ -75,15 +75,17 @@ type SocialLink = {
 type FormSectionProps = {
   firstClass?: string;
   secondClass?: string;
+  locale?: string;
 };
 
 const FormSection = async ({
   firstClass = "bg-primary relative bg-[url('/form-bg.png')] bg-cover bg-center",
   secondClass = "bg-[#1d042fce] bg-opacity-60 z-10",
+  locale,
 }: FormSectionProps) => {
   const t = await getTranslations();
-  const contactData = await getContactData();
-
+  const concat = await getContactData();
+  const contactData = locale === "ar" ? concat?.ar : concat?.en;
   // Split contact information into arrays
   const emails =
     contactData?.contact_mails

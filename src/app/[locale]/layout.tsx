@@ -83,7 +83,7 @@ export default async function localeLayout({
             <CustomRouteProgress />
             <Header />
             {children}
-            <Footer />
+            <Footer locale={locale} />
             <Toaster />
           </GlobalErrorHandler>
         </NextIntlClientProvider>

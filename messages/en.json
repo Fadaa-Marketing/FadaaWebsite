@@ -308,6 +308,13 @@
     "hero": {
       "title": "Services",
       "description": "Services That Drive Your Brand Forward"
+    },
+    "sharedService": {
+      "brandsWorkedWith": "Brands we have worked with"
+    },
+    "gifSection": {
+      "howWeWork": "How We Work",
+      "ourApproach": "Our Approach"
     }
   },
   "thankYouPage": {
@@ -331,27 +338,27 @@
       "sending": "Sending..."
     }
   },
-  "gifSection": {
-    "howWeWork": "How We Work",
-    "ourApproach": "Our Approach"
-  },
-  "sharedService": {
-    "brandsWorkedWith": "Brands we have worked with"
-  },
   "portoserv": {
     "portfolio": "Portfolio",
     "TakeALook": "Take A Look",
     "AtOtherTrips": "At Other Trips"
-  },  "notFound": {
+  },
+  "notFound": {
     "backToHome": "Back To Home",
     "altText": "Page not found illustration"
-  },"homeBlog":{
-    "Readmore":"Read More"
-  },  "leftSide": {
+  },
+  "homeBlog": {
+    "Readmore": "Read More"
+  },
+  "leftSide": {
     "popularBlogs": "Popular Blogs",
     "services": "Services",
     "contactUs": "Contact Us"
-  },"blogs":{
-    "blogs":"Blogs"
-    }
+  },
+  "blogs": {
+    "blogs": "Blogs"
+  },
+  "read": {
+    "read": "Read more"
+  }
 }

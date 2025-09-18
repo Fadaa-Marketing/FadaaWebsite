@@ -22,7 +22,7 @@ export const getContactData = async () => {
       return [];
     }
     const data = await res.json();
-    return data?.data?.en;
+    return data?.data;
   } catch (error) {
     return [];
   }
@@ -45,23 +45,6 @@ export const getAboutData = async () => {
   }
 };
 export const getAboutWhyUs = async () => {
-  try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/why-choose-us`,
-      {
-        cache: "no-store",
-      }
-    );
-    if (!res.ok) {
-      return [];
-    }
-    const data = await res.json();
-    return data?.data;
-  } catch (error) {
-    return [];
-  }
-};
-export const getTeamData = async () => {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/why-choose-us`,

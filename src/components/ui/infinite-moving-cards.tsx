@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { beforeNavigate } from '../../app/[locale]/utils/navigation';
+import { beforeNavigate } from "../../app/[locale]/utils/navigation";
 export const InfinitePlanets = ({
   planets = [],
   speed = 20,
@@ -261,15 +261,15 @@ export const InfinitePlanets = ({
                 onClick={() => beforeNavigate()}
               >
                 <Image
-                  src={item.imgUrl}
-                  alt={item.title}
+                  src={item?.imgUrl}
+                  alt={item?.title || "s"}
                   width={planetSize}
                   height={planetSize}
                   className="select-none pointer-events-none"
                   draggable={false}
                 />
                 <span className="text-[14px] capitalize sm:text-[16px] md:text-[18px] tracking-[2px] font-[400] select-none whitespace-pre-line">
-                  {item.title.replace(/ /g, "\n")}
+                  {item?.title?.replace(/ /g, "\n")}
                 </span>
               </Link>
             </span>

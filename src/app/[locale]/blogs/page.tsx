@@ -14,15 +14,19 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t("description"),
   };
 }
-
-const Page = async () => {
+type PageProps = {
+  params: {
+    locale: string;
+  };
+};
+const Page = async ({params}:PageProps) => {
   const blogs: BlogPost[] = await getAllBlogs();
-
+  const { locale } = await params 
   return (
     <div className="bg-primary relative first-porto">
       <BlogsHero />
-      <Filters blogs={blogs} />
-      <FormSection />
+      <Filters blogs={blogs} locale={locale} />
+      <FormSection locale={locale}/>
     </div>
   );
 };

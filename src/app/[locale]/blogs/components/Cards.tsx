@@ -4,9 +4,10 @@ import Card from './Card';
 
 interface CardsProps {
   blogs: BlogPost[];
+  locale:string
 }
 
-const Cards: React.FC<CardsProps> = ({ blogs }) => {
+const Cards: React.FC<CardsProps> = ({ blogs,locale }) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-12 gap-6 md:gap-10 mt-14 items-stretch">
       {blogs?.map((blog, idx) => {
@@ -16,7 +17,7 @@ const Cards: React.FC<CardsProps> = ({ blogs }) => {
 
         return (
           <div key={idx} className={`w-full ${colSpanClass} h-full`}>
-            <Card {...blog} />
+            <Card {...blog} locale={locale} />
           </div>
         );
       })}

@@ -4,10 +4,12 @@ import { Plus, Minus } from "lucide-react";
 import DOMPurify from "isomorphic-dompurify";
 import { useTranslations } from "next-intl";
 
-export default function AboutCompanySection({ aboutData }: any) {
+export default function AboutCompanySection({ aboutData, locale }: any) {
   const t = useTranslations("AboutCompanySection");
   const [open, setOpen] = useState<number | null>(null);
-  const cleanHtml1 = DOMPurify.sanitize(aboutData[0]?.content || "");
+  const cleanHtml1 = DOMPurify.sanitize(
+    locale === "ar" ? aboutData[0]?.content_ar : aboutData[0]?.content
+  );
 
   const handleToggle = (id: number) => {
     setOpen((prev) => (prev === id ? null : id));
@@ -22,7 +24,9 @@ export default function AboutCompanySection({ aboutData }: any) {
             {t("whoWeAre")}
           </span>
           <p className="text-white text-[20px] sm:text-[30px] md:text-[40px] font-[400] ">
-            {aboutData[0]?.title || t("aboutOurCompany")}
+            {locale === "ar"
+              ? aboutData[0]?.title_ar
+              : aboutData[0]?.title || t("aboutOurCompany")}
           </p>
         </div>
         <div className="text-[18px] md:text-[20px] font-[500] text-white space-y-2">
@@ -33,7 +37,9 @@ export default function AboutCompanySection({ aboutData }: any) {
       {/* Right: Accordion */}
       <div className="lg:col-span-5 flex-1 w-full lg:ms-auto lg:max-w-xl flex flex-col gap-4">
         {aboutData?.slice(2)?.map((item: any, idx: number) => {
-          const cleanContent = DOMPurify.sanitize(item.content || "");
+          const cleanContent = DOMPurify.sanitize(
+            locale === "ar" ? item.content_ar : item.content || ""
+          );
           return (
             <div
               key={item.id}
@@ -41,20 +47,20 @@ export default function AboutCompanySection({ aboutData }: any) {
             >
               <button
                 className={`w-full flex items-center justify-between px-6 text-left focus:outline-none rounded-2xl transition-colors duration-200 ${
-                  open === item.id ? "pt-5" : "py-5"
+                  open === item?.id ? "pt-5" : "py-5"
                 }`}
-                onClick={() => handleToggle(item.id)}
-                aria-expanded={open === item.id}
-                aria-controls={`accordion-content-${item.id}`}
+                onClick={() => handleToggle(item?.id)}
+                aria-expanded={open === item?.id}
+                aria-controls={`accordion-content-${item?.id}`}
               >
                 <span className="flex items-center gap-3 text-lg capitalize md:text-[18px] font-[400]">
                   <span className="text-white font-[400] mr-2">
                     {String(idx + 1).padStart(2, "0") + "."}
                   </span>
-                  {item.title}
+                  {locale === "ar" ? item?.title_ar : item?.title}
                 </span>
                 <span className="ml-4 flex items-center justify-center w-8 h-8 rounded-full bg-[#FFFFFF26] transition-colors duration-200">
-                  {open === item.id ? (
+                  {open === item?.id ? (
                     <Minus className="w-5 h-5 text-white transition-transform duration-200" />
                   ) : (
                     <Plus className="w-5 h-5 text-white transition-transform duration-200" />
@@ -62,9 +68,9 @@ export default function AboutCompanySection({ aboutData }: any) {
                 </span>
               </button>
               <div
-                id={`accordion-content-${item.id}`}
+                id={`accordion-content-${item?.id}`}
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  open === item.id
+                  open === item?.id
                     ? "max-h-30 opacity-100 pt-5"
                     : "max-h-0 opacity-0 pt-0"
                 }`}

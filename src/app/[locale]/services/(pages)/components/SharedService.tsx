@@ -28,7 +28,7 @@ const SharedService = async ({
   text: string;
   gif: Gif[];
   trik: Trik[];
-  locale?: string;
+  locale: string;
 }) => {
   const services = await getAllServices();
   const cleanHtml = DOMPurify.sanitize(text || "");
@@ -53,7 +53,7 @@ const SharedService = async ({
         <ClientOnlyHTML html={cleanHtml} />
       </div>
 
-      <ActivePlanet services={services} />
+      <ActivePlanet locale={locale} services={services} />
 
       <div className="py-10 flex flex-col justify-center items-center">
         <p className="x-padding secondary-title text-center md:text-left capitalize my-10">
@@ -62,14 +62,14 @@ const SharedService = async ({
         <ClientsLogo />
       </div>
 
-      <GifSection gif={gif} />
+      <GifSection locale={locale} gif={gif} />
 
       <section className="main-padding">
         <PortfolioTitle />
         <PortfolioComponent trik={trik} title={title} />
       </section>
 
-      <FormSection />
+      <FormSection locale={locale}/>
     </div>
   );
 };

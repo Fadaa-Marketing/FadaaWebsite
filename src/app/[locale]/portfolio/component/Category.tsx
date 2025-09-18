@@ -50,7 +50,7 @@ const DefaultGrid = ({ data }: { data: any[] }) => (
     </div>
   </div>
 );
-const Category = ({ portoCategory }: any) => {
+const Category = ({ portoCategory, locale }: any) => {
   const [active, setActive] = useState<string>("");
   const [portoData, setPortoData] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
@@ -101,7 +101,7 @@ const Category = ({ portoCategory }: any) => {
                 : "bg-[#F0F0F0] text-primary"
             }`}
           >
-            {cat.name}
+            {locale === "ar" ? cat?.name_ar : cat?.name}
           </div>
         ))}
       </div>

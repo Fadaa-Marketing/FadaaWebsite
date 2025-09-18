@@ -308,6 +308,13 @@
     "hero": {
       "title": "الخدمات",
       "description": "خدمات تدفع علامتك التجارية للأمام"
+    },
+    "sharedService": {
+      "brandsWorkedWith": "العلامات التجارية التي عملنا معها"
+    },
+    "gifSection": {
+      "howWeWork": "كيف نعمل",
+      "ourApproach": "نهجنا"
     }
   },
   "thankYouPage": {
@@ -337,13 +344,7 @@
       "sending": "جاري الإرسال..."
     }
   },
-  "gifSection": {
-    "howWeWork": "كيف نعمل",
-    "ourApproach": "نهجنا"
-  },
-  "sharedService": {
-    "brandsWorkedWith": "العلامات التجارية التي عملنا معها"
-  },
+
   "portoserv": {
     "portfolio": "أعمالنا",
     "TakeALook": "ألقِ نظرة",
@@ -360,7 +361,11 @@
     "popularBlogs": "المدونات الشائعة",
     "services": "خدماتنا",
     "contactUs": "تواصل معنا"
-  },"blogs":{
-    "blogs":"المدونة"
-    }
+  },
+  "blogs": {
+    "blogs": "المدونة"
+  },
+  "read": {
+    "read": "اقرأ المزيد"
+  }
 }

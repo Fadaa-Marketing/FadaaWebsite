@@ -20,11 +20,14 @@ const Article = ({ blog, locale }: { blog: BlogPost; locale: string }) => {
             : blog.bcategory.name}{" "}
         </div>
         <p className="text-white text-xl ">
-          {new Date(blog.created_at).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
+          {new Date(blog.created_at).toLocaleDateString(
+            locale === "ar" ? "ar-EG" : "en-US",
+            {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }
+          )}
         </p>
       </div>
       <div

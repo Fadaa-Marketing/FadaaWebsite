@@ -9,19 +9,20 @@ import { useTranslations } from "next-intl";
 interface JobCategory {
   id: number;
   name: string;
+  name_ar: string;
 }
 
 interface SidebarProps {
   jobsCategory: JobCategory[];
+  locale: string;
 }
 
-const Sidebar = ({ jobsCategory }: SidebarProps) => {
+const Sidebar = ({ jobsCategory, locale }: SidebarProps) => {
   const t = useTranslations("JobsPage.Sidebar");
 
   const [selectedCatId, setSelectedCatId] = useState<number | null>(null);
-  const [allJobs, setAllJobs] = useState([]);
+  const [allJobs, setAllJobs] = useState<any[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeCat, setActiveCat] = useState(t("allPositions"));
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -37,9 +38,11 @@ const Sidebar = ({ jobsCategory }: SidebarProps) => {
     fetchJobs();
   }, [selectedCatId]);
 
-  const filteredJobs = allJobs?.filter((job: any) =>
-    job?.title?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // ✅ Locale-aware job search
+  const filteredJobs = allJobs?.filter((job: any) => {
+    const jobTitle = locale === "ar" ? job?.title_ar : job?.title;
+    return jobTitle?.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   const buttonStyle = (isActive: boolean) =>
     `py-4 text-start px-6 rounded-lg rounded-l-none transition-all duration-150 hover:bg-white hover:text-primary hover:border-l-[6px] hover:border-l-secondary ${
@@ -58,11 +61,8 @@ const Sidebar = ({ jobsCategory }: SidebarProps) => {
 
             {/* All Jobs */}
             <button
-              onClick={() => {
-                setSelectedCatId(null);
-                setActiveCat(t("allPositions"));
-              }}
-              className={buttonStyle(activeCat === t("allPositions"))}
+              onClick={() => setSelectedCatId(null)}
+              className={buttonStyle(selectedCatId === null)}
             >
               {t("allJobs")}
             </button>
@@ -71,13 +71,10 @@ const Sidebar = ({ jobsCategory }: SidebarProps) => {
             {jobsCategory?.map((item) => (
               <button
                 key={item.id}
-                onClick={() => {
-                  setSelectedCatId(item.id);
-                  setActiveCat(item.name);
-                }}
-                className={buttonStyle(activeCat === item.name)}
+                onClick={() => setSelectedCatId(item.id)}
+                className={buttonStyle(selectedCatId === item.id)}
               >
-                {item.name}
+                {locale === "ar" ? item.name_ar : item.name}
               </button>
             ))}
           </div>
@@ -86,6 +83,7 @@ const Sidebar = ({ jobsCategory }: SidebarProps) => {
         </aside>
       </div>
 
+      {/* Jobs Content */}
       {loading ? (
         <div className="w-full">
           <p className="text-center text-[18px] md:text-[24px] px-2 text-white flex items-center justify-center gap-1">
@@ -99,8 +97,8 @@ const Sidebar = ({ jobsCategory }: SidebarProps) => {
         </div>
       ) : filteredJobs.length > 0 ? (
         <div className="flex flex-col gap-10 w-full">
-          {filteredJobs?.map((item: any, key: number) => (
-            <JobDetails key={key} positions={item} />
+          {filteredJobs?.map((item, key) => (
+            <JobDetails key={key} positions={item} locale={locale} />
           ))}
         </div>
       ) : (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
-export default async function WhyUs({ aboutWhy }: any) {
+export default async function WhyUs({ aboutWhy, locale }: any) {
   const t = await getTranslations("WhyUs");
 
   return (
@@ -17,7 +17,13 @@ export default async function WhyUs({ aboutWhy }: any) {
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 px-4">
         {aboutWhy?.map(
           (
-            card: { icon_url: string; title: string; description: string },
+            card: {
+              icon_url: string;
+              title_ar: string;
+              title: string;
+              description: string;
+              description_ar: string;
+            },
             idx: number
           ) => (
             <div
@@ -26,7 +32,7 @@ export default async function WhyUs({ aboutWhy }: any) {
             >
               <div className="w-[55px] h-[55px] mb-6 flex items-center justify-center rounded-full bg-[#F0F0F0]">
                 <Image
-                  src={card.icon_url || "/about/Vector (5).svg"}
+                  src={card?.icon_url || "/about/Vector (5).svg"}
                   alt="loading"
                   width={29}
                   height={20}
@@ -34,10 +40,10 @@ export default async function WhyUs({ aboutWhy }: any) {
                 />
               </div>
               <h3 className="text-[22px] md:text-[25px] font-[500] text-white mb-3 uppercase text-left ">
-                {card.title}
+                {locale === "ar" ? card?.title_ar : card?.title}
               </h3>
               <p className="text-base md:text-[18px] text-[#CFCFCF] opacity-90 text-left font-[500]">
-                {card.description}
+                {locale === "ar" ? card?.description_ar : card?.description}
               </p>
             </div>
           )

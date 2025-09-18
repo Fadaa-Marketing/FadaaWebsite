@@ -12,11 +12,15 @@ export const generateMetadata = async (): Promise<Metadata> => {
     description: t("description"),
   };
 };
-
-const Portfolio = async () => {
+interface PropPage{
+  params: {
+    locale: string;
+  };
+}
+const Portfolio = async ({params}:PropPage) => {
   const t = await getTranslations("portfolio.hero");
   const portoCategory = await getPortoCat();
-
+const {locale} = await params
   return (
     <div className="pg-primary first-porto">
       <div className="sec-porto mx-auto">
@@ -26,8 +30,8 @@ const Portfolio = async () => {
             description={t("description")}
           />
         </div>
-        <Category portoCategory={portoCategory} />
-        <FormSection />
+        <Category locale={locale} portoCategory={portoCategory} />
+        <FormSection locale={locale}/>
       </div>
     </div>
   );

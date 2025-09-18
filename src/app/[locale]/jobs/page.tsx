@@ -14,18 +14,22 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t("description"),
   };
 }
-
-const Page = async () => {
+interface PropPage{
+  params:{
+    locale:string
+  }
+}
+const Page = async ({params}:PropPage) => {
   const jobsCategory = await getJobsCategory();
   const socialImages = await getSocialImages();
   const socialLinks = await getContactData();
   const socialData = socialLinks?.social_links;
-
+const {locale} = await params
   return (
     <div className="bg-primary">
       <HeroSection />
       <Team />
-      <Opportunities jobsCategory={jobsCategory} />
+      <Opportunities locale={locale} jobsCategory={jobsCategory} />
       <Socials socialData={socialData} socialImages={socialImages} />
     </div>
   );

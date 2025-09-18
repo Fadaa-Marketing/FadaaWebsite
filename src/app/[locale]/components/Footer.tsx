@@ -62,11 +62,13 @@ export interface ServiceProps {
   title: string;
   link: string;
 }
-
-const Footer = async () => {
+interface PropFoot {
+  locale: string;
+}
+const Footer = async ({ locale }: PropFoot) => {
   const t = await getTranslations("footer");
-  const contactData = await getContactData();
-
+  const concat = await getContactData();
+  const contactData = locale === "ar" ? concat?.ar : concat?.en;
   const emails =
     contactData?.contact_mails?.split(",")?.map((e: string) => e.trim()) || [];
   const phones =
@@ -77,7 +79,7 @@ const Footer = async () => {
 
   const formattedServices: ServiceProps[] =
     services?.map((service: any) => ({
-      title: service?.title,
+      title: locale === "ar" ? service?.title_ar : service?.title,
       link: `/services/${service?.slug}`,
     })) || [];
 
@@ -95,9 +97,7 @@ const Footer = async () => {
               className="footer-logo"
             />
           </LinkClient>
-          <p className="footer-description footer-text">
-            {t("description")}
-          </p>
+          <p className="footer-description footer-text">{t("description")}</p>
         </div>
 
         {/* Menu links */}
@@ -135,12 +135,18 @@ const Footer = async () => {
             {formattedServices?.length > 0
               ? formattedServices.map((service, idx) => (
                   <li key={idx} className="capitalize">
-                    <LinksClient href={service.link}>{service.title}</LinksClient>
+                    <LinksClient href={service.link}>
+                      {service.title}
+                    </LinksClient>
                   </li>
                 ))
-              : Object.entries(t.raw("serviceList") as Record<string, string>).map(([key, value]) => (
+              : Object.entries(
+                  t.raw("serviceList") as Record<string, string>
+                ).map(([key, value]) => (
                   <li key={key} className="capitalize">
-                    <LinksClient href={`/services/${key}`}>{String(value)}</LinksClient>
+                    <LinksClient href={`/services/${key}`}>
+                      {String(value)}
+                    </LinksClient>
                   </li>
                 ))}
           </ul>

@@ -7,12 +7,13 @@ import { useTranslations } from "next-intl";
 
 interface FiltersProps {
   blogs: BlogPost[];
+  locale:string
 }
 
 // Map UI labels to stable keys by lowercasing and trimming
 const CATEGORY_KEYS = blogCategory.map((c) => c.toLowerCase().trim());
 
-const Filters = ({ blogs }: FiltersProps) => {
+const Filters = ({ blogs,locale }: FiltersProps) => {
   const [catKey, setCatKey] = useState<string>("all");
   const t = useTranslations("BlogsPage.Filters");
 
@@ -51,7 +52,8 @@ const Filters = ({ blogs }: FiltersProps) => {
 
       {/* Blog Cards */}
       <div className="mt-10 min-h-screen">
-        <Cards blogs={filteredBlogs} />
+      <Cards blogs={filteredBlogs} locale={locale} />
+
       </div>
     </div>
   );

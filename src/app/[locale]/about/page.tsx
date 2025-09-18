@@ -18,13 +18,17 @@ export async function generateMetadata({ params: { locale } }: any): Promise<Met
     description: t("meta.description"),
   };
 }
-
-export default async function Page() {
+interface PropPage{
+  params:{
+    locale:string
+  }
+}
+export default async function Page({params}:PropPage) {
   const aboutData = await getAboutData();
   const aboutWhy = await getAboutWhyUs();
   const allGallery = await getAllGallery();
   const t = await getTranslations("AboutPage");
-
+  const {locale} = await params
   return (
     <>
       <div className="bg-primary">
@@ -32,17 +36,17 @@ export default async function Page() {
         <div className="sec-porto">
           <AboutHero />
           <div className="bg-[url('/about/leftCenter.png')] bg-no-repeat bg-bottom-left">
-            <AboutCompanySection aboutData={aboutData} />
-            <AboutFamily aboutData={aboutData} />
+            <AboutCompanySection locale={locale} aboutData={aboutData} />
+            <AboutFamily locale={locale} aboutData={aboutData} />
           </div>
           <div className="bg-[url('/about/rightTop.png')] bg-no-repeat bg-right">
-            <WhyUs aboutWhy={aboutWhy} />
+            <WhyUs locale={locale} aboutWhy={aboutWhy} />
             <OurAws allGallery={allGallery} />
           </div>
           <div className="bg-[url('/about/leftTop.png')] bg-no-repeat bg-top-left">
-            <ServicesNew classpt="lg:pt-0 lg:pb-[60px]" />
+            <ServicesNew locale={locale} classpt="lg:pt-0 lg:pb-[60px]" />
           </div>
-          <FormSection />
+          <FormSection locale={locale}/>
         </div>
       </div>
     </>
